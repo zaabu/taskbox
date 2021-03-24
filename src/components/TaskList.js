@@ -70,19 +70,6 @@ PureTaskList.defaultProps = {
   loading: false,
 };
 //connect component to a redux store
-//Argument 1: Provide component with pieces of data it needs from the store(first argument)
-//Argument 2: Give it functions it can use to dispatch actions to the store
-
-//If a mapStateToProps function is specified, the new wrapper component will subscribe to Redux store updates. 
-//This means that any time the store is updated, mapStateToProps will be called. The results of mapStateToProps must be a plain object, which will be merged into the wrapped component’s props.
-// If you don't want to subscribe to store updates, pass null or undefined in place of mapStateToProps.
-
-// dispatch  is a function of the redux store. You call store.dispatch to dispatch an action
-//This is the only way to trigger a state change
-
-//By default a connected component receives props.dispatch and can dispatch actions itself
-//We can also use mapDispatchToProps to create functions that dispatch when called
-//And pass those functions as props to our component
 export default connect(
   ({ tasks }) => ({
     tasks: tasks.filter(t => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'),

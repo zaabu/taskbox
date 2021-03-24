@@ -45,5 +45,6 @@ const defaultTasks = [
   { id: '4', title: 'Something again', state: 'TASK_INBOX' },
 ];
 
+
 // We export the constructed redux store
 export default createStore(reducer, { tasks: defaultTasks });
