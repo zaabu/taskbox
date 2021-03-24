@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
+        #checkout / download repo so that it's available to the runner
       - uses: actions/checkout@v1
+        #Install dependecies and run app
       - run: yarn
-        #👇 Adds Chromatic as a step in the workflow
+        #👇Deploy our app to chromatic
       - uses: chromaui/action@v1
         # Options required for Chromatic's GitHub Action
         with:
